@@ -22,7 +22,7 @@ class ML:
             pred = self.prediction(node)
             if pred > 0 and int(node[self.oindex]) > 0 or pred == int(node[self.oindex]):
                 correct += 1
-        return correct/len(self.test)
+        return 100*correct/len(self.test)
 
 
 class KNN(ML):
@@ -55,4 +55,4 @@ class KNN(ML):
 
 
 knn = KNN(5, 'processed.cleveland.data')
-print(knn.runtest())
+#print(knn.runtest())
